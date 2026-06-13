@@ -1,0 +1,27 @@
+{"ts": "2026-05-23T16:39:47.178399+00:00", "event": "startup.summary_generated", "is_empty": true, "visible": false}
+{"ts": "2026-05-23T16:39:47.179373+00:00", "event": "startup.summary_empty"}
+{"ts": "2026-05-23T16:39:47.180139+00:00", "event": "ipc.bootstrap", "project_count": 0, "startup_visible": false}
+{"ts": "2026-05-23T16:39:47.522045+00:00", "event": "startup.summary_generated", "is_empty": true, "visible": false}
+{"ts": "2026-05-23T16:39:47.522735+00:00", "event": "startup.summary_empty"}
+{"ts": "2026-05-23T16:39:47.523367+00:00", "event": "ipc.bootstrap", "project_count": 0, "startup_visible": false}
+{"ts": "2026-05-23T17:48:29.483898+00:00", "event": "startup.summary_generated", "is_empty": true, "visible": false}
+{"ts": "2026-05-23T17:48:29.484716+00:00", "event": "startup.summary_empty"}
+{"ts": "2026-05-23T17:48:29.485451+00:00", "event": "ipc.bootstrap", "project_count": 0, "startup_visible": false}
+{"ts": "2026-05-23T17:48:29.793608+00:00", "event": "startup.summary_generated", "is_empty": true, "visible": false}
+{"ts": "2026-05-23T17:48:29.794352+00:00", "event": "startup.summary_empty"}
+{"ts": "2026-05-23T17:48:29.795006+00:00", "event": "ipc.bootstrap", "project_count": 0, "startup_visible": false}
+{"ts": "2026-05-23T18:47:51.098607+00:00", "event": "startup.summary_generated", "is_empty": true, "visible": false}
+{"ts": "2026-05-23T18:47:51.099451+00:00", "event": "startup.summary_empty"}
+{"ts": "2026-05-23T18:47:51.100330+00:00", "event": "ipc.bootstrap", "project_count": 0, "startup_visible": false}
+{"ts": "2026-05-23T18:47:51.668508+00:00", "event": "startup.summary_generated", "is_empty": true, "visible": false}
+{"ts": "2026-05-23T18:47:51.669397+00:00", "event": "startup.summary_empty"}
+{"ts": "2026-05-23T18:47:51.670343+00:00", "event": "ipc.bootstrap", "project_count": 0, "startup_visible": false}
+{"ts": "2026-05-23T20:35:16.821932+00:00", "event": "startup.summary_generated", "is_empty": true, "visible": false}
+{"ts": "2026-05-23T20:35:16.822835+00:00", "event": "startup.summary_empty"}
+{"ts": "2026-05-23T20:35:16.823548+00:00", "event": "ipc.bootstrap", "project_count": 0, "startup_visible": false}
+{"ts": "2026-05-23T20:35:17.302715+00:00", "event": "startup.summary_generated", "is_empty": true, "visible": false}
+{"ts": "2026-05-23T20:35:17.303569+00:00", "event": "startup.summary_empty"}
+{"ts": "2026-05-23T20:35:17.304221+00:00", "event": "ipc.bootstrap", "project_count": 0, "startup_visible": false}
+{"ts": "2026-05-23T20:40:44.001738+00:00", "event": "startup.summary_generated", "is_empty": true, "visible": false}
+{"ts": "2026-05-23T20:40:44.002630+00:00", "event": "startup.summary_empty"}
+{"ts": "2026-05-23T20:40:44.003338+00:00", "event": "ipc.bootstrap", "project_count": 0, "startup_visible": false}

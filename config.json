@@ -1,0 +1,7 @@
+{
+  "database_path": null,
+  "log_level": "INFO",
+  "usage_journal": true,
+  "debug_timing": false,
+  "default_project_opener": "cursor"
+}

@@ -1,0 +1,102 @@
+Graf-Id — maintenance / fix history (MVP)
+
+Format:
+[DATE OR PHASE]
+Issue:
+Fix:
+Result:
+
+
+[MVP stabilization — 2026-05]
+Issue:
+Desktop UI actions (Settings open, project select, history) were slow because each action spawned a new Python subprocess.
+Fix:
+Moved IPC to a lightweight entrypoint (`python -m grafid.ipc <subcommand> …`) with handler-scoped/lazy imports.
+Added a bootstrap preload that embeds `app_settings`, per-project `resume_panel`, and per-project `history` into a single startup payload.
+Frontend reads these values from an in-memory `bootstrapCache` instead of calling IPC for normal navigation.
+Result:
+Normal navigation paths no longer spawn `python.exe`. Python remains on-demand for explicit heavy actions (Refresh Context, Open Project, End Session).
+
+
+[MVP stabilization — 2026-05]
+Issue:
+Project detail calls were doing redundant work and made cold-path performance worse.
+Fix:
+Removed unnecessary work from `project-detail` and separated history into a dedicated `project-history` path.
+Result:
+Less backend work per call and cleaner separation between “detail” and “history”.
+
+
+[MVP stabilization — 2026-05]
+Issue:
+Scanner output could be noisy or misleading (too many low-signal files; unclear why something was skipped).
+Fix:
+Strengthened scan bounds (ignore defaults, limits) and surfaced scan health in refresh results so skips/warnings are visible.
+Result:
+Refresh remains explicit, bounded, and transparent; no background scanning was introduced.
+
+
+[Summary quality pass — 2026-05]
+Issue:
+Summaries could drift toward low-value filler, and Exit Notes were not consistently prioritized.
+Fix:
+Kept the summary assembly deterministic: prioritize session fields / Exit Notes first, then workflow files, then scan markers and git as supporting context.
+Filtered placeholder-like content while preserving raw DB text for what the user typed.
+Result:
+More consistent “where to pick up” summaries with fewer misleading lines.
+
+
+[Workflow signal extraction — 2026-05]
+Issue:
+Signals for “what matters” were buried when projects had lots of churn.
+Fix:
+Improved extraction of workflow signals (HANDOFF/NEXT/session notes patterns) and made the resume panel composition more structured.
+Result:
+Higher-signal continuity lines with clearer sectioning in the Resume panel.
+
+
+[Exit Note UX — 2026-05]
+Issue:
+Closing a session often lost the most useful continuity info unless notes were recorded cleanly.
+Fix:
+Exit Note modal captures: what you did, unfinished, blocker, next step (and supports skip-notes).
+Result:
+Lower friction capture of continuity signals; better next-session context.
+
+
+[Desktop “Open Folder” boundary — 2026-05]
+Issue:
+“Open Folder” behavior could accidentally trigger workflow state changes or extra backend work.
+Fix:
+Made the desktop Open Folder button Rust-only (Explorer open of the registered project root) and avoided Python IPC for that action.
+Result:
+Clear boundary: Open Folder is purely a shell action; Open Project is the workflow action.
+
+
+[Tray sleep mode — 2026-05]
+Issue:
+After a successful editor launch, the app fully exited, which made quick return inconvenient.
+Fix:
+After successful Open Project/editor launch, the main window hides to a system tray icon with a small menu (Show / Quit).
+Result:
+“Sleep mode” after launch without any background scanning/polling; restoring the window does not auto-refresh.
+
+
+[Packaging milestone — 2026-05]
+Issue:
+Desktop release needed to run without requiring users to install Python or use a terminal.
+Fix:
+Packaged the app as Tauri + embedded Python runtime under `runtime/` and produced MSI/NSIS installers via `tauri build` scripts.
+User data stays under `%LOCALAPPDATA%\Graf-Id` (config/SQLite/logs), never inside the install directory.
+Result:
+Release `.exe` and installers work on machines without a repo checkout or a Python install.
+
+
+[Icons / branding — 2026-05]
+Issue:
+App icon/favicon integration was inconsistent across UI and packaged builds.
+Fix:
+Standardized icon generation and bundle integration as part of the packaging checklist.
+Result:
+Consistent app identity across the desktop UI and Windows installers.
+

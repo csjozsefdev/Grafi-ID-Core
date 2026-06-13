@@ -1,0 +1,6 @@
+{
+  "database_path": null,
+  "log_level": "INFO",
+  "usage_journal": false,
+  "debug_timing": false
+}
